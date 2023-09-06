@@ -7,7 +7,7 @@ dotenv.config({ path: "./config.env" });
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({}));
+app.use(express.urlencoded({ extended: true }));
 
 // Check if the required environment variables are defined
 if (!process.env.DATABASE) {
