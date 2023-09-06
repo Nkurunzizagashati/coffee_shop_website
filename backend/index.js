@@ -3,6 +3,7 @@ import adminRouter from "./routes/admin.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import productsRouter from "./routes/products.js";
+import shopRouter from "./routes/shop.js";
 
 dotenv.config({ path: "./config.env" });
 
@@ -10,10 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Check if the required environment variables are defined
 if (!process.env.DATABASE) {
   console.error("DATABASE environment variable is not defined");
-  process.exit(1); // Exit the application with an error code
+  process.exit(1);
 }
 
 mongoose
@@ -31,8 +31,9 @@ mongoose
 
 app.use("/api/admin", adminRouter);
 app.use("/api/products", productsRouter);
+app.use("/api/shop", shopRouter);
 
-const PORT = process.env.PORT || 3000; // Use the value from the environment variable or default to 3000
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Your server is running on port ${PORT}`);
 });

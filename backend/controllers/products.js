@@ -18,7 +18,7 @@ const addProduct = async (req, res) => {
       price,
       imageUri,
     });
-    res.status(201).json({ addedProduct: addedProduct });
+    res.status(201).json({ message: addedProduct });
   } catch (error) {
     res.status(401).json({ error: error.message });
     console.error(error);
@@ -43,7 +43,7 @@ const updateProduct = async (req, res) => {
       return res.status(404).json({ error: "Product not found" });
     }
 
-    res.status(200).json({ error: updatedProduct });
+    res.status(200).json({ message: updatedProduct });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
