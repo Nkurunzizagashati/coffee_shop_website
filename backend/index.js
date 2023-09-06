@@ -33,7 +33,7 @@ app.use("/api/admin", adminRouter);
 app.use("/api/products", productsRouter);
 app.use("/api/shop", shopRouter);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Your server is running on port ${PORT}`);
 });
