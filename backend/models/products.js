@@ -11,8 +11,12 @@ const ProductsSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
+  },
+  quatity: {
+    type: String,
+    default: "1 cup",
   },
   imageUri: {
     type: String,

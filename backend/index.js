@@ -2,6 +2,7 @@ import express from "express";
 import adminRouter from "./routes/admin.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import productsRouter from "./routes/products.js";
 
 dotenv.config({ path: "./config.env" });
 
@@ -29,6 +30,7 @@ mongoose
   });
 
 app.use("/api/admin", adminRouter);
+app.use("/api/products", productsRouter);
 
 const PORT = process.env.PORT || 3000; // Use the value from the environment variable or default to 3000
 app.listen(PORT, () => {
