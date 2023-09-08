@@ -8,7 +8,7 @@ import {
 const router = express.Router();
 
 router.get("/", getProfile);
-router.put("/", registerShop);
+router.post("/", registerShop);
 router.patch("/", updateProfile);
 
 export default router;

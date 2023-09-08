@@ -4,10 +4,12 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import productsRouter from "./routes/products.js";
 import shopRouter from "./routes/shop.js";
+import cors from "cors";
 
 dotenv.config({ path: "./config.env" });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
